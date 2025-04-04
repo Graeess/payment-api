@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: payment-api
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/payment_api
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        orm.jdbc.bind: TRACE
+      springframework: DEBUG
+    javadaily.paymentapi: DEBUG
+    org.springframework.data: DEBUG
+
+jwt: { secret: GCoUHZYoM9JZnf5HqLY9Wwom1Y7Ewlnwqtqhrd+Vt6jCYXO0vsfc1mVRSSaxw+Wt1q228hQn6YYfmA+yr3X00Q==, expiration: 86400000 }
